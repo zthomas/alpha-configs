@@ -1,0 +1,47 @@
+{
+  "debug": true,
+  "refreshCycle": 50,
+  "siteActions": [
+    {
+      "name": "Marketplace Message Handler",
+      "match": "https://www.facebook.com/messages",
+      "actions": [
+        {
+          "action": "listenForNewChat",
+          "parameter": [
+            {
+              "chatRowSelector": "div[aria-label='Chats'] [role='row']",
+              "marketplaceLabel": "Marketplace",
+              "marketplaceLinkSelector": "a[aria-label='See details']",
+              "unreadMessagesSelector": "div[aria-label=Marketplace] div[aria-hidden=true][role=button]",
+              "inputSelector": "div[role=textbox][contenteditable]",
+              "responseEndpoint": "https://jsonplaceholder.typicode.com/posts/1",
+              "defaultMessage": "Please visit https://leasey.ai",
+              "replyMemory": 10000,
+              "submitDelay": 3500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Rental Redirect",
+      "match": "https://www.facebook.com/marketplace/you/selling",
+      "actions": [
+        {
+          "action": "redirect",
+          "parameter": [
+            "https://www.facebook.com/marketplace/create/rental"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rental Postings",
+      "match": "https://www.facebook.com/marketplace/create/rental",
+      "waitTimeBetweenActions": 50,
+      "loopInterval": 1000,
+      "actionsEndpoint": "https://zthomas.github.io/alpha-configs/postActions.json"
+    }
+  ]
+}

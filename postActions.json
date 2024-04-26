@@ -1,0 +1,135 @@
+[
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Home for Sale or Rent\"]",
+      0
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Rental type\"]",
+      0
+    ]
+  },
+  {
+    "action": "insertImage",
+    "parameter": [
+      [
+        "https://picsum.photos/seed/picsum/200/300"
+      ]
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Number of bedrooms\"]//input",
+      2
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Number of bathrooms\"]//input",
+      2
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Price per month\"]//input",
+      "$4490"
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Property square feet\"]//input",
+      "1200"
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Choose Date\"]//input",
+      "April 19, 2024"
+    ]
+  },
+  {
+    "action": "setTextarea",
+    "parameter": [
+      "//label[@aria-label=\"Rental description\"]//textarea",
+      "Awesome place with a view"
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Laundry type\"]",
+      0
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Parking type\"]",
+      0
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Air conditioning type\"]",
+      0
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Heating type\"]",
+      0
+    ]
+  },
+  {
+    "action": "setInput",
+    "parameter": [
+      "//label[@aria-label=\"Rental address\"]//input",
+      "3500 No. 3 Road, Richmond"
+    ]
+  },
+  {
+    "action": "click",
+    "parameter": [
+      "div[role=option]"
+    ]
+  },
+  {
+    "action": "sleep",
+    "parameter": [
+      10000
+    ]
+  },
+  {
+    "action": "click",
+    "parameter": [
+      "div[aria-label=Next]"
+    ]
+  },
+  {
+    "action": "sleep",
+    "parameter": [
+      1000
+    ]
+  },
+  {
+    "action": "click",
+    "parameter": [
+      "div[aria-label=Publish]"
+    ]
+  },
+  {
+    "action": "fetch",
+    "parameter": ["https://jsonplaceholder.typicode.com/posts/1?success=true"]
+  }
+]
