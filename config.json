@@ -41,7 +41,7 @@
       "match": "https://www.facebook.com/marketplace/create/rental",
       "waitTimeBetweenActions": 50,
       "loopInterval": 1000,
-      "actionsEndpoint": "https://zthomas.github.io/alpha-configs/postActions.json"
+      "actionsEndpoint": "https://raw.githubusercontent.com/zthomas/alpha-configs/main/postActions.json"
     }
   ]
 }
