@@ -2,13 +2,6 @@
   {
     "action": "selectOption",
     "parameter": [
-      "//label[@aria-label=\"Home for Sale or Rent\"]",
-      0
-    ]
-  },
-  {
-    "action": "selectOption",
-    "parameter": [
       "//label[@aria-label=\"Rental type\"]",
       0
     ]
