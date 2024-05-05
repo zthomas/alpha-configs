@@ -5,34 +5,32 @@
     {
       "name": "Marketplace Message Handler",
       "match": "https://www.facebook.com/messages",
+      "loopInterval": 5000,
       "actions": [
+        {
+          "name": "click on Marketplace tab",
+          "action": "click",
+          "parameter": [
+            "div[aria-label=Chats] [role=button][tabindex=\"0\"]"
+          ]
+        },
         {
           "action": "listenForNewChat",
           "parameter": [
             {
-              "chatRowSelector": "div[aria-label='Chats'] [role='row']",
-              "marketplaceLabel": "Marketplace",
-              "marketplaceLinkSelector": "a[aria-label='See details']",
               "unreadMessagesSelector": "div[aria-label=Marketplace] div[aria-hidden=true][role=button]",
+              "marketplaceLinkSelector": "[role=main] a[tabindex=\"0\"][target=_blank]",
               "inputSelector": "div[role=textbox][contenteditable]",
-              "responseEndpoint": "https://jsonplaceholder.typicode.com/posts/1",
-              "defaultMessage": "Please visit https://leasey.ai",
+              "responseEndpoint": "https://jsonplaceholder.typicode.com/posts",
+              "defaultMessage": "Please visit https://leasey.ai/lisitngs/${id}",
               "replyMemory": 10000,
               "submitDelay": 3500
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Marketplace Rental Redirect",
-      "match": "https://www.facebook.com/marketplace/you/selling",
-      "actions": [
+        },
         {
-          "action": "redirect",
-          "parameter": [
-            "https://www.facebook.com/marketplace/create/rental"
-          ]
+          "action": "sleep",
+          "parameter": [3000]
         }
       ]
     },
@@ -40,8 +38,23 @@
       "name": "Rental Postings",
       "match": "https://www.facebook.com/marketplace/create/rental",
       "waitTimeBetweenActions": 50,
-      "loopInterval": 1000,
-      "actionsEndpoint": "https://raw.githubusercontent.com/zthomas/alpha-configs/main/postActions.json"
+      "loopInterval": 5000,
+      "actionsEndpoint": "http://127.0.0.1:8080/postActions.json"
+    },
+    {
+      "name": "Listing Identifier",
+      "match": "https://www.facebook.com/marketplace/item",
+      "loopInterval": 5000,
+      "conditional": true,
+      "actions": [
+        {
+          "action": "extractText",
+          "parameter": [
+            "[data-pagelet=MainFeed]",
+            "\\[#(.+)\\]"
+          ]
+        }
+      ]
     }
   ]
 }

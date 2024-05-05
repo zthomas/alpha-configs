@@ -1,27 +1,5 @@
 [
   {
-    "action": "selectOption",
-    "parameter": [
-      "//label[@aria-label=\"Home for Sale or Rent\"]",
-      0
-    ]
-  },
-  {
-    "action": "selectOption",
-    "parameter": [
-      "//label[@aria-label=\"Rental type\"]",
-      0
-    ]
-  },
-  {
-    "action": "insertImage",
-    "parameter": [
-      [
-        "https://picsum.photos/seed/picsum/200/300"
-      ]
-    ]
-  },
-  {
     "action": "setInput",
     "parameter": [
       "//label[@aria-label=\"Number of bedrooms\"]//input",
@@ -33,6 +11,30 @@
     "parameter": [
       "//label[@aria-label=\"Number of bathrooms\"]//input",
       2
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Home for Sale or Rent\"]",
+      0,
+      15
+    ]
+  },
+  {
+    "action": "selectOption",
+    "parameter": [
+      "//label[@aria-label=\"Rental type\"]",
+      0,
+      15
+    ]
+  },
+  {
+    "action": "insertImage",
+    "parameter": [
+      [
+        "https://picsum.photos/seed/picsum/200/300"
+      ]
     ]
   },
   {
@@ -60,7 +62,7 @@
     "action": "setTextarea",
     "parameter": [
       "//label[@aria-label=\"Rental description\"]//textarea",
-      "Awesome place with a view"
+      "[#123156] Awesome place with a view"
     ]
   },
   {
@@ -126,6 +128,18 @@
     "action": "click",
     "parameter": [
       "div[aria-label=Publish]"
+    ]
+  },
+  {
+    "action": "sleep",
+    "parameter": [
+      3000
+    ]
+  },
+  {
+    "action": "redirect",
+    "parameter": [
+      "https://www.facebook.com/marketplace/create/rental"
     ]
   },
   {
