@@ -5,13 +5,14 @@
     {
       "name": "Marketplace Message Handler",
       "match": "https://www.facebook.com/messages",
-      "loopInterval": 5000,
+      "loopInterval": 2000,
       "actions": [
         {
           "name": "click on Marketplace tab",
           "action": "click",
           "parameter": [
-            "div[aria-label=Chats] [role=button][tabindex=\"0\"]"
+            "div[aria-label=Chats] [role=button][tabindex=\"0\"]",
+            "[hidden]"
           ]
         },
         {
@@ -30,7 +31,7 @@
         },
         {
           "action": "sleep",
-          "parameter": [3000]
+          "parameter": [1000]
         }
       ]
     },
@@ -39,22 +40,7 @@
       "match": "https://www.facebook.com/marketplace/create/rental",
       "waitTimeBetweenActions": 50,
       "loopInterval": 5000,
-      "actionsEndpoint": "http://127.0.0.1:8080/postActions.json"
-    },
-    {
-      "name": "Listing Identifier",
-      "match": "https://www.facebook.com/marketplace/item",
-      "loopInterval": 5000,
-      "conditional": true,
-      "actions": [
-        {
-          "action": "extractText",
-          "parameter": [
-            "[data-pagelet=MainFeed]",
-            "\\[#(.+)\\]"
-          ]
-        }
-      ]
+      "actionsEndpoint": "https://raw.githubusercontent.com/zthomas/alpha-configs/main/postActions.json"
     }
   ]
 }
